@@ -9,6 +9,7 @@ Group:		Applications/Communications
 Source0:	http://duch.mimuw.edu.pl/~hunter/%{name}-%{version}.tar.gz
 # Source0-md5:	df997f519b7088b327aa612ef12e0fdb
 #Patch0:		%{name}-what.patch
+Source1:	%{name}.sysconfig
 URL:		http://pbx.sf.net
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -46,11 +47,29 @@ To jest czê¶æ systemu PBX u¿ywaj±ca PHP.
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sysconfdir}/rc.d/init.d/pbx,%{_datadir}/pbx/{css,img,tpl}}
+install -d $RPM_BUILD_ROOT%{_sysconfdir}/sysconfig
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+install -d $RPM_BUILD_ROOT/var/lib/%{name}/{log,run,scripts}
+
 install util/pbx $RPM_BUILD_ROOT%{_sysconfdir}/rc.d/init.d/pbx
+install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/sysconfig/pbx
+
 install html/css/styles.css $RPM_BUILD_ROOT%{_datadir}/pbx/css/styles.css
 install html/img/*.gif $RPM_BUILD_ROOT%{_datadir}/pbx/img/
 install html/tpl/*.tpl $RPM_BUILD_ROOT%{_datadir}/pbx/tpl/
 install html/*.php $RPM_BUILD_ROOT%{_datadir}/pbx/
+
+install util/pbx.cron $RPM_BUILD_ROOT/%{_examplesdir}/%{name}-%{version}/
+install sql/{user,pbx}.sql $RPM_BUILD_ROOT/%{_examplesdir}/%{name}-%{version}/
+
+install workerhome/capture.log			$RPM_BUILD_ROOT/var/lib/%{name}/
+install workerhome/fix-rights.sh		$RPM_BUILD_ROOT/var/lib/%{name}/
+install workerhome/log/execution.log	$RPM_BUILD_ROOT/var/lib/%{name}/log/
+install workerhome/log/pbxerr.log		$RPM_BUILD_ROOT/var/lib/%{name}/log/
+install workerhome/run/pbx.pid			$RPM_BUILD_ROOT/var/lib/%{name}/run/
+install workerhome/scripts/processfile	$RPM_BUILD_ROOT/var/lib/%{name}/scripts/
+install workerhome/scripts/sed_script	$RPM_BUILD_ROOT/var/lib/%{name}/scripts/
+
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -60,15 +79,13 @@ rm -rf $RPM_BUILD_ROOT
 %doc ChangeLog README TODO
 %doc docs/*
 
-# if _sysconfdir != /etc:
-#%%dir %{_sysconfdir}
-%attr(755,root,root) %{_bindir}/*
-
 %{_datadir}/%{name}
 
-# initscript and it's config
 %attr(754,root,root) /etc/rc.d/init.d/%{name}
 %config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/%{name}
+
+%{_examplesdir}/%{name}-%{version}
+/var/lib/%{name}/
 
 %files php
 %defattr(644,root,root,755)
