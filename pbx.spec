@@ -1,13 +1,11 @@
 #
-#
 Summary:	Phone billing system
-Summary(pl):	 System bilingowy po³±czeñ telefonicznych.
+Summary(pl):	System bilingowy po³±czeñ telefonicznych
 Name:		pbx
 Version:	20050222
 Release:	0.1
 License:	GPL v2
 Group:		Applications/Communications
-#Icon:		-
 Source0:	http://duch.mimuw.edu.pl/~hunter/%{name}-%{version}.tar.gz
 # Source0-md5:	df997f519b7088b327aa612ef12e0fdb
 #Patch0:		%{name}-what.patch
@@ -49,21 +47,13 @@ To jest czê¶æ systemu PBX u¿ywaj±ca PHP.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sysconfdir}/rc.d/init.d/pbx,%{_datadir}/pbx/{css,img,tpl}}
 install util/pbx $RPM_BUILD_ROOT%{_sysconfdir}/rc.d/init.d/pbx
-install html/css/styles.css  $RPM_BUILD_ROOT%{_datadir}/pbx/css/styles.css
-install html/img/*.gif  $RPM_BUILD_ROOT%{_datadir}/pbx/img/
-install html/tpl/*.tpl  $RPM_BUILD_ROOT%{_datadir}/pbx/tpl/
-install html/*.php  $RPM_BUILD_ROOT%{_datadir}/pbx/
+install html/css/styles.css $RPM_BUILD_ROOT%{_datadir}/pbx/css/styles.css
+install html/img/*.gif $RPM_BUILD_ROOT%{_datadir}/pbx/img/
+install html/tpl/*.tpl $RPM_BUILD_ROOT%{_datadir}/pbx/tpl/
+install html/*.php $RPM_BUILD_ROOT%{_datadir}/pbx/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
-%pre
-
-%post
-
-%preun
-
-%postun
 
 %files
 %defattr(644,root,root,755)
