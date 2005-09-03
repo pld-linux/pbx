@@ -8,7 +8,7 @@ Group:		Applications/Communications
 Source0:	http://duch.mimuw.edu.pl/~hunter/%{name}-%{version}.tar.gz
 # Source0-md5:	df997f519b7088b327aa612ef12e0fdb
 Source1:	%{name}.sysconfig
-URL:		http://pbx.sf.net/
+URL:		http://pbx.sourceforge.net/
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
