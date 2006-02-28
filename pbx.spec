@@ -31,15 +31,15 @@ koszt po³±czeñ w oparciu o zbiór "parametrów konfiguruj±cych koszty":
 walut, cen, czasu (w szczycie, poza szczytem), wybieranego numeru itp.
 
 %package php
-Summary:	Phone billing system	
+Summary:	Phone billing system
 Summary(pl):	System bilingowy po³±czeñ telefonicznych.
 Group:		Applications/Communications
 
 %description php
-This is PHP part of PBX. 
+This is PHP part of PBX.
 
 %description php -l pl
-To jest czê¶æ systemu PBX u¿ywaj±ca PHP. 
+To jest czê¶æ systemu PBX u¿ywaj±ca PHP.
 
 %prep
 %setup -q -n %{name}
