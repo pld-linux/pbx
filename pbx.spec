@@ -1,5 +1,5 @@
 Summary:	Phone billing system
-Summary(pl):	System bilingowy po³±czeñ telefonicznych
+Summary(pl.UTF-8):   System bilingowy poÅ‚Ä…czeÅ„ telefonicznych
 Name:		pbx
 Version:	20050222
 Release:	0.1
@@ -21,25 +21,25 @@ The billing part of that package is written in PHP and can calculate
 call cost based on a set of "cost configuration parameters":
 currencies, cost, time (on-peak, off-peak), dialed number, etc.
 
-%description -l pl
-Pbx jest systemem ksiêgowania/bilingowania po³±czeñ telefonicznych.
-Wykorzystuje on funkcjê SMDR (Station Message Detailed Recording)
-któr± posiadaj± wszystkie wspó³czesne centrale telefoniczne.
+%description -l pl.UTF-8
+Pbx jest systemem ksiÄ™gowania/bilingowania poÅ‚Ä…czeÅ„ telefonicznych.
+Wykorzystuje on funkcjÄ™ SMDR (Station Message Detailed Recording)
+ktÃ³rÄ… posiadajÄ… wszystkie wspÃ³Å‚czesne centrale telefoniczne.
 
-System bilingowo-prezentacyjny wykonany jest w PHP i mo¿e obliczaæ
-koszt po³±czeñ w oparciu o zbiór "parametrów konfiguruj±cych koszty":
+System bilingowo-prezentacyjny wykonany jest w PHP i moÅ¼e obliczaÄ‡
+koszt poÅ‚Ä…czeÅ„ w oparciu o zbiÃ³r "parametrÃ³w konfigurujÄ…cych koszty":
 walut, cen, czasu (w szczycie, poza szczytem), wybieranego numeru itp.
 
 %package php
 Summary:	Phone billing system
-Summary(pl):	System bilingowy po³±czeñ telefonicznych.
+Summary(pl.UTF-8):   System bilingowy poÅ‚Ä…czeÅ„ telefonicznych.
 Group:		Applications/Communications
 
 %description php
 This is PHP part of PBX.
 
-%description php -l pl
-To jest czê¶æ systemu PBX u¿ywaj±ca PHP.
+%description php -l pl.UTF-8
+To jest czÄ™Å›Ä‡ systemu PBX uÅ¼ywajÄ…ca PHP.
 
 %prep
 %setup -q -n %{name}
