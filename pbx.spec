@@ -1,5 +1,5 @@
 Summary:	Phone billing system
-Summary(pl.UTF-8):   System bilingowy połączeń telefonicznych
+Summary(pl.UTF-8):	System bilingowy połączeń telefonicznych
 Name:		pbx
 Version:	20050222
 Release:	0.1
@@ -32,7 +32,7 @@ walut, cen, czasu (w szczycie, poza szczytem), wybieranego numeru itp.
 
 %package php
 Summary:	Phone billing system
-Summary(pl.UTF-8):   System bilingowy połączeń telefonicznych.
+Summary(pl.UTF-8):	System bilingowy połączeń telefonicznych.
 Group:		Applications/Communications
 
 %description php
